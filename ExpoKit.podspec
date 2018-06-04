@@ -19,28 +19,36 @@ Pod::Spec.new do |s|
     ss.preserve_paths = "ios/Exponent/**/*.{h,m}"
     ss.exclude_files = "ios/Exponent/Supporting/**", "ios/Exponent/Versioned/Optional/**/*.{h,m}"
 
-    ss.dependency 'Amplitude-iOS', '~> 3.8'
-    ss.dependency 'Analytics', '~> 3.5'
     ss.dependency 'AppAuth', '~> 0.4'
     ss.dependency 'CocoaLumberjack', '~> 3.2.1'
-    ss.dependency 'Crashlytics', '~> 3.8'
-    ss.dependency 'FBAudienceNetwork', '~> 4.24'
-    ss.dependency 'FBSDKCoreKit', '~> 4.28'
-    ss.dependency 'FBSDKLoginKit', '~> 4.28'
-    ss.dependency 'FBSDKShareKit', '~> 4.28'
-    ss.dependency 'Fabric', '~> 1.6'
-    ss.dependency 'GoogleSignIn', '~> 3.0'
     ss.dependency 'lottie-ios', '~> 2.5.0'
     ss.dependency 'GPUImage', '~> 0.1.7'
     ss.dependency 'JKBigInteger2', '0.0.5'
     ss.dependency 'Branch', '~> 0.24.2'
-    ss.dependency 'Google-Mobile-Ads-SDK', '~> 7.22.0'
     ss.dependency 'React' # explicit dependency required for CocoaPods >= 1.5.0
   end
 
-  s.subspec "Maps" do |ss|
+  s.subspec "Analytics" do |ss|
+    ss.dependency 'Amplitude-iOS', '~> 3.8'
+    ss.dependency 'Analytics', '~> 3.5'
+  end
+
+  s.subspec "Fabric" do |ss|
+    ss.dependency 'Fabric', '~> 1.6'
+    ss.dependency 'Crashlytics', '~> 3.8'
+  end
+
+  s.subspec "Facebook" do |ss|
+    ss.dependency 'FBSDKCoreKit', '~> 4.28'
+    ss.dependency 'FBSDKLoginKit', '~> 4.28'
+    ss.dependency 'FBSDKShareKit', '~> 4.28'
+    ss.dependency 'FBAudienceNetwork', '~> 4.24'
+  end
+
+  s.subspec "AddOns" do |ss|
     ss.dependency 'GoogleMaps', '~> 2.5.0'
     ss.dependency 'Google-Maps-iOS-Utils', '~> 2.1.0'
+    ss.dependency 'GoogleSignIn', '~> 3.0'
   end
 
   s.subspec "CPP" do |ss|
